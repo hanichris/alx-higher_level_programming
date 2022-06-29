@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
 def uppercase(str):
-    if str is None or str == '':
-        raise ValueError
     new_str = ''
     for char in str:
         if char >= 'a' and char <= 'z':
