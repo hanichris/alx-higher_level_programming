@@ -3,7 +3,7 @@
 def max_integer(my_list=[]):
     if len(my_list) == 0:
         return None
-    max_num = 0
+    max_num = float('-inf')
     for num in my_list:
         if num >= max_num:
             max_num = num
