@@ -2,6 +2,7 @@
 
 """Module that holds the definition of a Square class."""
 
+
 class Square:
     """Models a square."""
 
