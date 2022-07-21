@@ -5,7 +5,6 @@
 import math
 
 
-
 class MagicClass:
     """Models a square."""
 
