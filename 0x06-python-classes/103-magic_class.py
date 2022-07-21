@@ -2,6 +2,9 @@
 
 """Module that holds the definition of a Magic class."""
 
+import math
+
+
 
 class MagicClass:
     """Models a square."""
