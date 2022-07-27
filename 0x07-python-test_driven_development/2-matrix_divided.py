@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Function that divides all the elements of a matrix."""
 
+
 def matrix_divided(matrix, div):
     """Divided the elements of matrix by div.
 
@@ -14,20 +15,14 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    if matrix is None:
-       raise TypeError(
-               "matrix must be a matrix (list of lists)"
-               " of integers/floats"
-               )
-    new_matrix = [row[:] for row in matrix]
-    for row in new_matrix:
-        if len(row) != len(new_matrix[0]):
-            raise TypeError("Each row of the matrix must have the same size")
-        for index, elem in enumerate(row):
-            if type(elem) not in (int, float):
-                raise TypeError(
-                        "matrix must be a matrix (list of lists)"
-                        " of integers/floats"
-                        )
-            row[index] = round(elem/div, 2)
-    return new_matrix
+    if (not isinstance(matrix, list) or matrix == [] or matrix is None
+        or not all(isinstance(row, list) for row in matrix) or
+        not all((isinstance(elem, int) or isinstance(elem, float))
+                for elem in [num for row in matrix for num in row])):
+        raise TypeError(
+           "matrix must be a matrix (list of lists)"
+           " of integers/floats"
+           )
+    if not all(len(row) == len(matrix[0]) for row in matrix):
+        raise TypeError("Each row of the matrix must have the same size")
+    return [list(map(lambda x: round(x/div, 2), row)) for row in matrix]
