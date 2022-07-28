@@ -65,7 +65,7 @@ class Rectangle:
             if row != self.height - 1:
                 print()
         return ""
-    
+
     def __repr__(self):
         """Return the string representation of a rectangular object.
 
