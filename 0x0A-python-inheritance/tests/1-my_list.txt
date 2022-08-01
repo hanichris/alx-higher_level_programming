@@ -1,0 +1,66 @@
+The class `Mylist`
+=================
+
+Testing the print_sorted() method of the class
+----------------------------------------------
+First import the class
+>>> MyList = __import__('1-my_list').MyList
+>>> 
+
+print out a list in ascending order
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+case 1: Undefined object
+
+>>> my_list2.print_sorted()
+Traceback (most recent call last):
+NameError: name 'my_list2' is not defined
+
+case 2: Pass a list
+
+>>> my_list_3 = MyList([498, 197, 16, 1])
+>>> my_list_3.print_sorted()
+[1, 16, 197, 498]
+
+case 3: Pass an empty list
+
+>>> my_list_4 = MyList()
+>>> my_list_4.print_sorted()
+[]
+
+case 4: Pass a list with a singular element
+
+>>> my_list_5 = MyList()
+>>> my_list_5.append(45)
+>>> my_list_5.print_sorted()
+[45]
+
+case 5: Pass a list with the repeating elements
+
+>>> my_list_6 = MyList([98, 98, 98, 45, 32, 28, 28, 9])
+>>> my_list_6.print_sorted()
+[9, 28, 28, 32, 45, 98, 98, 98]
+
+case 6: Use a list defined by the parent class list
+
+>>> my_list_7 = [4, 7, 2, 1]
+>>> my_list_7.print_sorted()
+Traceback (most recent call last):
+AttributeError: 'list' object has no attribute 'print_sorted'
+
+case 7: Pass a list with negative numbers
+
+>>> my_list_8 = MyList([-1, -2, -3, -4, -5, 0])
+>>> my_list_8.print_sorted()
+[-5, -4, -3, -2, -1, 0]
