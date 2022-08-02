@@ -89,3 +89,8 @@ case 14: pass a boolean value
 >>> bg.integer_validator("name", False)
 Traceback (most recent call last):
 TypeError: name must be an integer
+
+case 15: pass a set
+>>> bg.integer_validator("name", {3, 4})
+Traceback (most recent call last):
+TypeError: name must be an integer
