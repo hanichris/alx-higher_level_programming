@@ -1,29 +1,6 @@
 #!/usr/bin/python3
-"""Module that defines the BaseGeometry class."""
-
-
-class BaseGeometry:
-    """Parent class for base geometry definition."""
-
-    def area(self):
-        """Unimplemented."""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Validates value.
-
-        Args:
-            name (str)
-            value (int)
-
-        Raises:
-            TypeError if value is not an integer.
-            ValueError if value is <= 0.
-        """
-        if type(value) != int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+"""Module that defines the Rectangle class."""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
