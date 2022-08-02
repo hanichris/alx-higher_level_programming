@@ -17,10 +17,10 @@ class Rectangle(BaseGeometry):
             width (int): Shorter side of the rectangle.
             height (int): Longer side of the rectangle.
         """
-        super().integer_validator("width", width)
-        self.__width = width
-        super().integer_validator("height", height)
-        self.__height = height
+        if super().integer_validator("width", width) is None: 
+            self.__width = width
+        if super().integer_validator("height", height) is None:
+            self.__height = height
 
     def area(self):
         """Return the area of the rectangular instance."""
