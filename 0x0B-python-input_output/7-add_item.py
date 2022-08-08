@@ -13,7 +13,10 @@ if __name__ == "__main__":
     try:
         my_list = load_from_json_file('add_item.json')
     except Exception:
-        save_to_json_file([], 'add_item.json')
+        if len(sys.argv) == 1:
+            save_to_json_file([], 'add_item.json')
+        else:
+            save_to_json_file(sys.argv[1:], 'add_item.json')
     else:
         for element in sys.argv:
             if element != './7-add_item.py':
