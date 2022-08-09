@@ -26,6 +26,6 @@ class Student:
         """
         if type(attrs) is list:
             res = dict(filter(lambda x: x[0] in attrs,
-                self.__dict__.items()))
+                              self.__dict__.items()))
             return res
         return self.__dict__
