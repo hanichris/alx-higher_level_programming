@@ -19,6 +19,6 @@ def pascal_triangle(n):
         temp = []
         for k in range(1, row + 1):
             temp.append(coeff)
-            coeff = int(coeff * (row - k) / k)
+            coeff = (coeff * (row - k)) // k
         res.append(temp)
     return res
