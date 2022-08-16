@@ -7,6 +7,16 @@ class Rectangle(Base):
     """Models a rectangular object"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialize a new rectangular object.
+
+        Args:
+            width (int): width of the rectangle.
+            height (int): height of the rectangle.
+            x (int): x-coordinate of the top-left corner of
+            the rectangle.
+            y (int): y-coordinate of the top-left corner of
+            the rectangle.
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -60,3 +70,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Compute the area of a rectangle using A = LW."""
+        return self.width * self.height

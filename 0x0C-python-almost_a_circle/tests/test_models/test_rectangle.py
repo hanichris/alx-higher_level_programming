@@ -268,3 +268,15 @@ class TestRectangle_y(unittest.TestCase):
 
     def test_acceptable_y(self):
         self.assertIsInstance(Rectangle(1, 2, 3, 4), Rectangle)
+
+
+class TestRectangle_area(unittest.TestCase):
+    """Test the area() method of the class."""
+
+    def test_area(self):
+        r = Rectangle(15, 6)
+        self.assertEqual(90, r.area())
+
+    def test_large_area(self):
+        r = Rectangle(1000000000000000, 1000000000000000000)
+        self.assertAlmostEqual(1e33, r.area())
