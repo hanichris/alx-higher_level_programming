@@ -1,6 +1,6 @@
 #!/usr/bin/node
 'use strict';
 
-const value = Number(process.argv[2]);
-if (!value) console.log('Not a Number');
+const value = +process.argv[2];
+if (isNaN(value)) console.log('Not a Number');
 else console.log(`My number: ${value}`);
