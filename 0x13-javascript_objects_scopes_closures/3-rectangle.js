@@ -8,12 +8,13 @@ class Rectangle {
       this.height = h;
     }
   }
+
   print () {
-  for (let i = 0; i < this.height; i++) {
-    for (let j = 0; j < this.width; j++) {
-      process.stdout.write('X');
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
+        process.stdout.write('X');
       }
-    process.stdout.write('\n');
+      process.stdout.write('\n');
     }
   }
 }
