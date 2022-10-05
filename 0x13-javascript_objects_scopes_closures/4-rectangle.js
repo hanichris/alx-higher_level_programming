@@ -9,10 +9,13 @@ class Rectangle {
     }
   }
 
-  print () {
+  print (c) {
+    if (c == null) {
+      c = 'X';
+    }
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
-        process.stdout.write('X');
+        process.stdout.write(c);
       }
       process.stdout.write('\n');
     }
@@ -23,8 +26,8 @@ class Rectangle {
   }
 
   double () {
-    this.width = this.width * 2;
-    this.height = this.height * 2;
+    this.width *= 2;
+    this.height *= 2;
   }
 }
 
