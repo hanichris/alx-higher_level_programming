@@ -17,7 +17,7 @@ class Rectangle {
       process.stdout.write('\n');
     }
   }
-  
+
   rotate () {
     [this.height, this.width] = [this.width, this.height];
   }
