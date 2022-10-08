@@ -18,7 +18,7 @@ if __name__ == "__main__":
                          passwd=passwd, db=database)
     cur = db.cursor()
     query = """SELECT id, name FROM states
-               WHERE name = '{}' ORDER BY id""".format(state)
+               WHERE name = BINARY '{}' ORDER BY id""".format(state)
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
