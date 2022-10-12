@@ -13,7 +13,7 @@ if __name__ == "__main__":
     url = f"mysql+mysqldb://{user}:{passwd}@localhost:3306/{db}"
     engine = create_engine(url, pool_pre_ping=True)
 
-    stmt = select(State).filter(State.name.contains('a')).\
+    stmt = select(State).filter(State.name.ilike('%a%')).\
         order_by(State.id)
     with Session(engine) as session:
         for state in session.scalars(stmt):
