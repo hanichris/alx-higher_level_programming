@@ -13,9 +13,8 @@ if __name__ == "__main__":
     url = f"mysql+mysqldb://{user}:{passwd}@localhost:3306/{db}"
     engine = create_engine(url, pool_pre_ping=True)
 
-    stmt = select(State).where(State.id == 1)
     with Session(engine) as session:
-        state = session.scalars(stmt).first()
+        state = session.query(State).first()
         if state is None:
             print('Nothing')
         else:
