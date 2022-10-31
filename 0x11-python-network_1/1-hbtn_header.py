@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Script to send a request to the provided url.
-
+"""
+Script to send a request to the provided url.
 On receiving the response, pick out the header with the name
 `X-Request-Id`.
 """
